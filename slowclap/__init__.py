@@ -24,6 +24,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
 THRESHOLD = 1.5e7
+AUDIO_DEVICE_INDEX = 1 # USB Mic
 
 Chunk = namedtuple('Chunk', 'data time')
 Clap = namedtuple('Clap', 'time')
@@ -69,7 +70,7 @@ class MicrophoneFeed(object):
     def __init__(self):
         self.enabled = True
         self.p = pyaudio.PyAudio()
-        self.stream = self.p.open(format=FORMAT, channels=CHANNELS, rate=RATE,
+        self.stream = self.p.open(input_device_index=AUDIO_DEVICE_INDEX, format=FORMAT, channels=CHANNELS, rate=RATE,
                                   input=True, frames_per_buffer=CHUNK)
         self.t = 0.0
 
