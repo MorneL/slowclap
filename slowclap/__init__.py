@@ -19,7 +19,7 @@ import subprocess
 import pyaudio
 import numpy as np
 
-CHUNK = 1024
+CHUNK = 1024 * 4
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
