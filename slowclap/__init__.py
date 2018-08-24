@@ -24,7 +24,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
 THRESHOLD = 1.5e7
-AUDIO_DEVICE_INDEX = 1 # USB Mic
+AUDIO_DEVICE_INDEX = 2 # USB Mic
 
 Chunk = namedtuple('Chunk', 'data time')
 Clap = namedtuple('Clap', 'time')
